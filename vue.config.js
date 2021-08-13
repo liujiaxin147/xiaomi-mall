@@ -12,7 +12,7 @@ module.exports = {
     }
   },
   devServer: {
-    // host: '42.193.121.151', // 设置主机地址
+    // host: 'localhost', // 设置主机地址
     // port: 8000, // 设置默认端口
     proxy: { // 设置代理
       // 拦截

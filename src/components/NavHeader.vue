@@ -170,7 +170,6 @@ export default {
       this.IsShow=false
     }
     this.axios.post("http://42.193.121.151:8000/shop/CartData",{
-      "user_cart":localStorage.getItem("token")
     }).then((response)=>{
       this.list = response.data
     },(error)=>{

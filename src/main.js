@@ -56,6 +56,8 @@ Vue.use(ElementUI)
 Vue.prototype.$api = api // 将api挂载到vue的原型上
 Vue.config.productionTip = false  // 关闭生产模式下给出的提示
 
+axios.defaults.withCredentials=true
+
 router.beforeEach(function (to,from,next) {
   if (to.meta.needLogin) {
     let token = localStorage.getItem("token");

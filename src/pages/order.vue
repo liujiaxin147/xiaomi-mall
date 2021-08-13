@@ -130,7 +130,7 @@ export default {
     };
   },
     created() {
-      this.axios.post('/shop/OrderAddress',{
+      this.axios.post('http://42.193.121.151:8000/shop/OrderAddress',{
       }).then((response)=>{
           this.AddressList = response.data
       },(error)=>{
@@ -138,7 +138,7 @@ export default {
       })
     },
     mounted() {
-        this.axios.post('/shop/OrderData',{
+        this.axios.post('http://42.193.121.151:8000/shop/OrderData',{
             "goods_id":this.$route.query.goods_id
         }).then((response)=>{
           this.list = response.data
@@ -230,10 +230,7 @@ export default {
       handleRowClick:function (row,column,event) {
           this.$refs.multipleTable.toggleRowSelection(row)
       },
-      handleSelection:function (selection,row) {
-          // console.log(row)
-      },
-      renderHeader:function () {
+      renderHeader:function (h) {
           return(
               <div>
               <el-button type="primary" onclick={this.confirmAddress}>确认</el-button>
